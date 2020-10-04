@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CPS731_Lab4</string>
+    <string name="temp">temp</string>
 </resources>
