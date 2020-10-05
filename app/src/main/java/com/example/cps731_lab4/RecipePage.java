@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 
 public class RecipePage extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class RecipePage extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_page);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Log.d(TAG, "onCreate: started.");
 
         getIncomingIntent();
@@ -41,7 +44,8 @@ public class RecipePage extends AppCompatActivity {
     private void setImage(String imageUrl, String recipeName, String recipeDesc){
         Log.d(TAG, "setImage: setting te image and name to widgets.");
 
-        TextView name = findViewById(R.id.recipeTxtView);
+        Toast.makeText(this,recipeName, Toast.LENGTH_SHORT).show();
+        TextView name = findViewById(R.id.titleTxtView);
         name.setText(recipeName);
 
         ImageView image = findViewById(R.id.recipeImage);

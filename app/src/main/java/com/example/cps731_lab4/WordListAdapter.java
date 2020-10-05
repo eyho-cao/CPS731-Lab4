@@ -68,7 +68,6 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         @Override
         public void onClick(View view) {
             int mPosition = getLayoutPosition();
-            Toast.makeText(mContext, Integer.toString(mPosition), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(mContext, RecipePage.class);
             intent.putExtra("image_url", urlList.get(mPosition));
             intent.putExtra("recipe_name",mWordList.get(mPosition));
